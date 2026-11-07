@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.DS_Store
+build/
+app/.build/
+app/.swiftpm/
+# The Mac app's library includes private decks (hstuapp, ncp_genl); scripts/build_app.sh regenerates it.
+app/Sources/Datacom/Resources/library.json
+app/Sources/Datacom/Resources/web/

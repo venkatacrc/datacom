@@ -1,0 +1,164 @@
+/* Lesson, card and prompt content. Shared by the web app and the Mac app's web views. */
+:root {
+    --accent: #4f46e5;
+    --accent-light: #6366f1;
+    --on-accent: #ffffff;
+    --bg: #f4f5f9;
+    --card: #ffffff;
+    --text: #161827;
+    --muted: #61657a;
+    --faint: #a3a7b8;
+    --line: #e1e3ec;
+    --green: #16a34a;
+    --orange: #d97706;
+    --red: #dc2626;
+    --code-bg: #0f1424;
+    --code-ink: #e4e8f4;
+    --tint: color-mix(in srgb, var(--accent) 8%, var(--card));
+    --ui: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --accent: #8b8cf8;
+        --accent-light: #a5a6ff;
+        --on-accent: #0d0e1a;
+        --bg: #0d0f17;
+        --card: #161925;
+        --text: #e7e9f3;
+        --muted: #9a9fb5;
+        --faint: #5d6278;
+        --line: #2a2e3f;
+        --code-bg: #0a0c14;
+    }
+}
+
+.content { line-height: 1.6; overflow-wrap: break-word; font-size: 1rem; }
+.content h1 { margin: 0 0 10px; font-size: clamp(1.4rem, 5vw, 1.85rem); line-height: 1.2; font-weight: 700; }
+.content h2 { margin: 1.5em 0 0.4em; font-size: 1.25rem; line-height: 1.3; }
+.content h3 { margin: 1.3em 0 0.3em; font-size: 1.08rem; }
+.content h4 { margin: 1em 0 0.25em; font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.content p { margin: 0.6em 0; }
+.content ul, .content ol { padding-left: 1.35em; }
+.content li { margin: 0.25em 0; }
+.content a { color: var(--accent); }
+.content img { max-width: 100%; height: auto; border-radius: 8px; }
+.content hr { border: none; border-top: 1px solid var(--line); margin: 1.4em 0; }
+.content blockquote { margin: 12px 0; padding: 4px 0 4px 14px; border-left: 3px solid var(--accent); color: var(--muted); }
+.content .lead { font-size: 1.05rem; }
+.content .meta, .content .fine { color: var(--muted); font-size: 0.9rem; }
+.content .read { font-style: italic; color: var(--muted); }
+.content .card-title { font-size: clamp(1.15rem, 4.4vw, 1.4rem); font-weight: 650; line-height: 1.35; margin: 0 0 6px; }
+
+.content code, .content kbd { font-family: var(--mono); font-size: 0.86em; }
+.content :not(pre) > code { background: color-mix(in srgb, var(--text) 8%, transparent); padding: 0.1em 0.35em; border-radius: 5px; overflow-wrap: anywhere; }
+.content pre {
+    position: relative;
+    margin: 1em 0;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: var(--code-bg);
+    color: var(--code-ink);
+    overflow-x: auto;
+    line-height: 1.45;
+    font-size: 0.88rem;
+    font-family: var(--mono);
+}
+.content pre code { background: none; padding: 0; color: inherit; font-size: inherit; }
+.content pre.mermaid, .content div.mermaid { background: transparent; color: var(--text); text-align: center; }
+.content .mermaid-offline { white-space: pre-wrap; text-align: left; font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
+
+.code-tools { position: absolute; top: 6px; right: 6px; display: flex; gap: 6px; opacity: 0.85; }
+.content pre:hover .code-tools { opacity: 1; }
+.code-tools button {
+    padding: 3px 9px;
+    border: 1px solid #39405a;
+    border-radius: 8px;
+    background: #1b2133;
+    color: #ccd3e6;
+    font: 500 0.76rem var(--ui);
+    cursor: pointer;
+}
+.code-tools button.try { border-color: var(--accent-light); background: var(--accent); color: #fff; }
+
+.tok-k { color: #ff7b9c; }
+.tok-s { color: #a5d6ff; }
+.tok-c { color: #8b93a8; font-style: italic; }
+.tok-n { color: #f5c46b; }
+.tok-f { color: #d2a8ff; }
+.tok-b { color: #7ee0c3; }
+
+.content .table-wrap { overflow-x: auto; margin: 12px 0; }
+.content table { border-collapse: collapse; font-size: 0.9rem; }
+.content th, .content td { border: 1px solid var(--line); padding: 6px 9px; text-align: left; vertical-align: top; }
+.content th { background: var(--bg); }
+
+/* Tex from Deep Math */
+.content .tex.display { display: block; margin: 10px 0; overflow-x: auto; overflow-y: hidden; text-align: center; font-size: 1.08rem; }
+.content .katex-display { overflow-x: auto; overflow-y: hidden; }
+
+/* Study sheets built from decks */
+.sheet-card { margin: 14px 0; padding: 12px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+.sheet-card h3 { margin-top: 0.2em; }
+.sheet-card h3 .kind {
+    display: inline-block;
+    margin-right: 6px;
+    padding: 1px 8px;
+    border-radius: 99px;
+    background: var(--tint);
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    vertical-align: 2px;
+}
+.content .block.check h4 { color: var(--green); }
+.content .block.chain h4 { color: var(--accent); }
+.content ol.options { padding-left: 1.6em; }
+.content ol.options li { margin: 0.35em 0; }
+.content .gl-sub { display: block; font-weight: 400; color: var(--muted); font-size: 0.9em; }
+
+/* gpukernels lesson steps */
+.step { margin: 18px 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.step > header { padding: 8px 14px; border-bottom: 1px solid var(--line); background: var(--tint); }
+.step .badge { padding: 2px 9px; border-radius: 99px; border: 1px solid var(--line); background: var(--card); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+.step > .body { padding: 2px 16px 12px; }
+.step.note { border-style: dashed; }
+
+/* Pages from the algos repo keep their own markup; give its blocks some shape. */
+.content .container { max-width: none; padding: 0; background: none; box-shadow: none; }
+.content .pattern, .content .problem, .content .feature-block, .content .model-card, .content .section > .concept {
+    margin: 16px 0;
+    padding: 12px 16px;
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    background: var(--tint);
+}
+.content .concept, .content .techniques, .content .complexity, .content .real-world, .content .example-io,
+.content .tip, .content .tip-box, .content .good-pattern, .content .bad-pattern, .content .delta, .content .arch, .content .refs {
+    margin: 12px 0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--text) 4%, var(--card));
+}
+.content .good-pattern { border-left: 4px solid var(--green); }
+.content .bad-pattern { border-left: 4px solid var(--red); }
+.content .syntax-title { margin: 12px 0 -6px; font-weight: 600; font-size: 0.9rem; color: var(--muted); }
+.content .toc { padding: 10px 14px; border-radius: 10px; background: var(--bg); }
+.content .figure-wrap, .content .chart-box { overflow-x: auto; }
+
+/* Problem prompts */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+.chip { padding: 2px 10px; border-radius: 99px; background: color-mix(in srgb, var(--text) 7%, transparent); color: var(--muted); font-size: 0.78rem; font-weight: 600; text-decoration: none; }
+.chip.easy { background: color-mix(in srgb, var(--green) 16%, transparent); color: var(--green); }
+.chip.medium { background: color-mix(in srgb, var(--orange) 16%, transparent); color: var(--orange); }
+.chip.hard { background: color-mix(in srgb, var(--red) 14%, transparent); color: var(--red); }
+
+@media print {
+    .code-tools { display: none !important; }
+    .content pre { white-space: pre-wrap; border: 1px solid #ddd; background: #f5f5f5; color: #000; }
+    .tok-k, .tok-s, .tok-c, .tok-n, .tok-f, .tok-b { color: #000; }
+}

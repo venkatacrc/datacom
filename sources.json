@@ -1,0 +1,104 @@
+{
+  "title": "Datacom",
+  "subtitle": "Crack the interview",
+  "tracks": [
+    {"id": "algorithms", "title": "Algorithms", "blurb": "Patterns, data structures and timed coding problems.", "color": "#3b82f6"},
+    {"id": "python-data", "title": "Python & Data", "blurb": "Python at scale, batch processing with pandas, NumPy and SQL, and streaming.", "color": "#0ea5a4"},
+    {"id": "system-design", "title": "System Design", "blurb": "Building blocks, ML system design and back-of-the-envelope maths.", "color": "#f59e0b"},
+    {"id": "ml", "title": "ML & Transformers", "blurb": "PyTorch, transformer architectures and ML coding from scratch.", "color": "#8b5cf6"},
+    {"id": "deepmath", "title": "Deep Math", "blurb": "The notation and equations of deep-learning papers, Grade 5 to Masters.", "color": "#ec4899"},
+    {"id": "gpu-kernels", "title": "GPU Kernels", "blurb": "Triton, Gluon and CUDA kernels stitched into an HSTU model.", "color": "#76b900"},
+    {"id": "training", "title": "Training", "blurb": "Training mechanics, distillation, RL alignment, quantization and HSTU training.", "color": "#ef4444"},
+    {"id": "inference", "title": "Inference & Serving", "blurb": "KV caches, vLLM, SGLang, llm-d and serving at scale.", "color": "#06b6d4"},
+    {"id": "genai-cert", "title": "NCP-GENL", "blurb": "NVIDIA-Certified Professional: Generative AI LLMs.", "color": "#64748b"}
+  ],
+  "sources": [
+    {
+      "id": "problems", "type": "problems", "path": "content/problems", "public": true,
+      "title": "Datacom problem bank", "url": "https://github.com/venkatacrc/datacom/tree/main/content/problems"
+    },
+    {
+      "id": "algos", "type": "algos", "path": "../algos", "public": true, "title": "algos",
+      "repo": "https://github.com/venkatacrc/algos", "pages": "https://venkatacrc.github.io/algos/",
+      "skip": ["index.html", "patterns/patterns_all.html", "scripts/*", "test-mode.js", "README.md"],
+      "map": [
+        {"glob": "patterns/*.html", "track": "algorithms", "section": "Coding patterns"},
+        {"glob": "binary_search_cheatsheet.md", "track": "algorithms", "section": "Cheat sheets"},
+        {"glob": "LEETCODE/*.md", "track": "algorithms", "section": "LeetCode notes"},
+        {"glob": "DP/*", "track": "algorithms", "section": "Dynamic programming notes"},
+        {"glob": "python_robust_at_scale.html", "track": "python-data", "section": "Python"},
+        {"glob": "numpy_tutorial.html", "track": "python-data", "section": "NumPy & pandas"},
+        {"glob": "pandas.md", "track": "python-data", "section": "NumPy & pandas"},
+        {"glob": "data_pipelines.html", "track": "python-data", "section": "Data pipelines"},
+        {"glob": "SQL/*", "track": "python-data", "section": "SQL"},
+        {"glob": "system_design.html", "track": "system-design", "section": "System design"},
+        {"glob": "MLSysDesign/*", "track": "system-design", "section": "ML system design"},
+        {"glob": "pytorch_karpathy.html", "track": "ml", "section": "PyTorch"},
+        {"glob": "transformers_*.html", "track": "ml", "section": "Transformers"},
+        {"glob": "*", "track": "algorithms", "section": "More notes"}
+      ],
+      "quiz_map": {
+        "sliding_window": "patterns/01_sliding_window.html",
+        "two_pointers": "patterns/02_two_pointers.html",
+        "numpy": "numpy_tutorial.html",
+        "pytorch": "pytorch_karpathy.html",
+        "system_design": "system_design.html",
+        "python_scale": "python_robust_at_scale.html",
+        "data_pipelines": "data_pipelines.html",
+        "transformers": "transformers_architectures_study_guide.html",
+        "sql": "SQL/sql_study_guide.html"
+      }
+    },
+    {
+      "id": "systemlegos", "type": "systemlegos", "path": "../systemlegos", "public": true,
+      "track": "system-design", "title": "System Legos", "url": "https://venkatacrc.github.io/systemlegos/"
+    },
+    {
+      "id": "deepmath", "type": "deepmath", "path": "../deepmath", "public": true,
+      "track": "deepmath", "title": "Deep Math", "url": "https://venkatacrc.github.io/deepmath/"
+    },
+    {
+      "id": "gpukernels", "type": "gpukernels", "path": "../gpukernels", "public": true,
+      "track": "gpu-kernels", "title": "GPU Kernels → HSTU", "url": "https://venkatacrc.github.io/gpukernels/",
+      "sections": {"foundations": "Foundations", "kernels": "Kernels", "hstu": "HSTU", "train": "Training HSTU",
+                   "serve": "Serving HSTU", "systems": "System optimisation", "frontier": "Frontier"}
+    },
+    {
+      "id": "hstuapp", "type": "deck", "path": "../hstuapp", "public": false,
+      "track": "training", "title": "HSTU Cards (private repo)", "prefix": "HSTU · ",
+      "url": "https://github.com/venkatacrc/hstuapp"
+    },
+    {
+      "id": "distillation", "type": "labs", "path": "../distillation", "public": true,
+      "track": "training", "section": "Distillation labs", "title": "Distillation labs",
+      "repo": "https://github.com/venkatacrc/distillation", "files": ["README.md", "labs/*/README.md"]
+    },
+    {
+      "id": "llm_rl", "type": "labs", "path": "../llm_rl", "public": true,
+      "track": "training", "section": "RL alignment labs", "title": "LLM RL alignment labs",
+      "repo": "https://github.com/venkatacrc/llm_rl", "files": ["README.md", "labs/*/README.md"]
+    },
+    {
+      "id": "quantization", "type": "labs", "path": "../quantization", "public": true,
+      "track": "training", "section": "Quantization labs", "title": "Quantization labs",
+      "repo": "https://github.com/venkatacrc/quantization", "files": ["README.md", "labs/*/README.md"]
+    },
+    {
+      "id": "nanogpt", "type": "labs", "path": "../nanogpt-kv-cache", "public": true,
+      "track": "inference", "section": "nanoGPT KV cache tutorial", "title": "nanoGPT KV cache",
+      "repo": "https://github.com/venkatacrc/nanogpt-kv-cache", "assets": "https://venkatacrc.github.io/nanogpt-kv-cache/",
+      "files": ["README.md", {"glob": "docs/index.md", "split": true}]
+    },
+    {
+      "id": "vllm_labs", "type": "vllm", "path": "../vllm_labs", "public": true,
+      "track": "inference", "title": "LLM Serving Labs", "url": "https://venkatacrc.github.io/vllm_labs/web/"
+    },
+    {
+      "id": "ncp_genl", "type": "deck", "path": "../ncp_genl", "public": false,
+      "track": "genai-cert", "title": "NCP-GENL (private repo)", "url": "https://github.com/venkatacrc/ncp_genl"
+    },
+    {
+      "id": "playground", "type": "playground", "path": "content/playground", "public": true
+    }
+  ]
+}

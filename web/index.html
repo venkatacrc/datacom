@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="description" content="Interview prep: algorithms, Python and data (batch and streaming), system design, ML, deep math, GPU kernels, training and inference — lessons, flash cards and a Python runner.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Datacom">
+    <title>Datacom · Crack the interview</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="content.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div id="app">
+        <header class="topbar">
+            <button class="icon-btn" id="open-drawer" aria-label="Menu">☰</button>
+            <a class="brand" href="#learn"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span> Datacom</a>
+            <button class="icon-btn" id="open-search" aria-label="Search" title="Search">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            </button>
+        </header>
+        <nav class="switches">
+            <div class="segmented" id="view-switch"></div>
+        </nav>
+        <div class="status" id="status"></div>
+        <main id="stage"></main>
+        <div class="keybar" id="keybar" hidden></div>
+        <nav class="actions" id="actions"></nav>
+    </div>
+
+    <div class="backdrop" id="backdrop" hidden></div>
+    <aside class="drawer" id="drawer" aria-hidden="true">
+        <div class="drawer-head">
+            <div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span> Datacom</div>
+            <button class="icon-btn" id="close-drawer" aria-label="Close">✕</button>
+        </div>
+        <div class="drawer-body" id="drawer-body"></div>
+        <div class="drawer-foot" id="drawer-foot"></div>
+    </aside>
+
+    <dialog id="help-dialog">
+        <div class="dialog-body">
+            <h2>Keyboard shortcuts</h2>
+            <p>On a phone, swipe a lesson or card left or right. While editing code, the key bar above the keyboard has Tab, brackets and cursor keys.</p>
+            <table class="keys">
+                <tr><td><kbd>1</kbd>–<kbd>4</kbd></td><td>Learn / Cards / Code / Progress</td></tr>
+                <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Previous / next lesson, card or problem</td></tr>
+                <tr><td><kbd>Space</kbd></td><td>Cards, Test: show the answer</td></tr>
+                <tr><td><kbd>G</kbd> / <kbd>M</kbd></td><td>Test: got it / missed it</td></tr>
+                <tr><td><kbd>K</kbd> / <kbd>R</kbd></td><td>Mark the card known / for review</td></tr>
+                <tr><td><kbd>⌘</kbd>/<kbd>Ctrl</kbd> <kbd>Enter</kbd></td><td>Run the code</td></tr>
+                <tr><td><kbd>⌘</kbd>/<kbd>Ctrl</kbd> <kbd>/</kbd></td><td>Comment or uncomment lines</td></tr>
+                <tr><td><kbd>Tab</kbd> / <kbd>⇧Tab</kbd></td><td>Indent / dedent</td></tr>
+                <tr><td><kbd>/</kbd></td><td>Search</td></tr>
+                <tr><td><kbd>Esc</kbd></td><td>Leave the editor, close the menu</td></tr>
+            </table>
+        </div>
+        <form method="dialog" class="dialog-actions"><button class="btn primary">Close</button></form>
+    </dialog>
+    <input type="file" id="import-file" accept="application/json" hidden>
+    <div class="toast" id="toast" hidden></div>
+
+    <script src="render.js"></script>
+    <script src="editor.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
